@@ -22,7 +22,7 @@ Owen's Algorithm Problem Solving Note
 
 1. [ATM Queue](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_F_1.java) / Priority Queue / AC / 2021.04.16
 2. [Metal Harvest](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_F_2.java) / ArrayList / AC / 2021.04.17
-
+3. [Painter's Duel](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_F_3.java) / minMax / WA / 2020.04.24
 
 ### 2021
 
