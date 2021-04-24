@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Kickstart_2020_F_3 {
 	static int[][] rooms;
-	static int S, minMax = 0;
+	static int S;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,81 +35,53 @@ public class Kickstart_2020_F_3 {
 			for (int j = 0; j <= 2 * S; j++) {
 				rooms[S + 1][j] = -1;
 			}
-			minMax = 0;
-			calcScore(Ra, Pa, Rb, Pb, 1, 1, true, true); // turn == true -> Alma, false -> Berthe
-			System.out.println("Case #" + i + ": " + minMax);
+			int answer = minMax(Ra, Pa, Rb, Pb, true, true); // turn == true -> Alma, false -> Berthe
+			System.out.println("Case #" + i + ": " + answer);
 		}
 	}
 
-	static void calcScore(int nowRa, int nowPa, int nowRb, int nowPb, int aScore, int bScore, boolean turn, boolean conti) {
-		boolean goFurther = false;
+	static int minMax(int nowRa, int nowPa, int nowRb, int nowPb, boolean turn, boolean conti) {
+		List<Point> neighbors = new ArrayList<>();
 		if (turn && nowRa >= 1 && nowRa <= S && nowPa >= 1 && nowPa <= 2 * S - 1) {
-			if (rooms[nowRa][nowPa + 1] == 0) {
-				goFurther = true;
-				rooms[nowRa][nowPa + 1] = 2;
-				calcScore(nowRa, nowPa + 1, nowRb, nowPb, aScore + 1, bScore, false, true);
-				rooms[nowRa][nowPa + 1] = 0;
-			}
-			if (rooms[nowRa][nowPa - 1] == 0) {
-				goFurther = true;
-				rooms[nowRa][nowPa - 1] = 2;
-				calcScore(nowRa, nowPa - 1, nowRb, nowPb, aScore + 1, bScore, false, true);
-				rooms[nowRa][nowPa - 1] = 0;
-			}
-			if (nowPa % 2 == 1 && rooms[nowRa + 1][nowPa + 1] == 0) {
-				goFurther = true;
-				rooms[nowRa + 1][nowPa + 1] = 2;
-				calcScore(nowRa + 1, nowPa + 1, nowRb, nowPb, aScore + 1, bScore, false, true);
-				rooms[nowRa + 1][nowPa + 1] = 0;
-			}
-			if (nowPa % 2 == 0 && rooms[nowRa - 1][nowPa - 1] == 0) {
-				goFurther = true;
-				rooms[nowRa - 1][nowPa - 1] = 2;
-				calcScore(nowRa - 1, nowPa - 1, nowRb, nowPb, aScore + 1, bScore, false, true);
-				rooms[nowRa - 1][nowPa - 1] = 0;
-			}
-			if(!goFurther) {
-				if(conti) calcScore(nowRa, nowPa, nowRb, nowPb, aScore, bScore, false, false);
-				else {
-					minMax = Math.min(minMax, aScore - bScore);
-					return;
-				}
-			}
+			if (rooms[nowRa][nowPa + 1] == 0) neighbors.add(new Point(nowRa, nowPa+1));
+			if (rooms[nowRa][nowPa - 1] == 0) neighbors.add(new Point(nowRa, nowPa-1));
+			if (nowPa % 2 == 1 && rooms[nowRa + 1][nowPa + 1] == 0) neighbors.add(new Point(nowRa + 1, nowPa + 1));
+			if (nowPa % 2 == 0 && rooms[nowRa - 1][nowPa - 1] == 0) neighbors.add(new Point(nowRa - 1, nowPa - 1));
 		} else if (!turn && nowRb >= 1 && nowRb <= S && nowPb >= 1 && nowPb <= 2 * S - 1) {
-			if (rooms[nowRb][nowPb + 1] == 0) {
-				goFurther = true;
-				rooms[nowRb][nowPb + 1] = 3;
-				calcScore(nowRa, nowPa, nowRb, nowPb + 1, aScore, bScore + 1, true, true);
-				rooms[nowRb][nowPb + 1] = 0;
-			}
-			if (rooms[nowRb][nowPb - 1] == 0) {
-				goFurther = true;
-				rooms[nowRb][nowPb - 1] = 3;
-				calcScore(nowRa, nowPa, nowRb, nowPb - 1, aScore, bScore + 1, true, true);
-				rooms[nowRb][nowPb - 1] = 0;
-			}
-			if (nowPb % 2 == 1 && rooms[nowRb + 1][nowPb + 1] == 0) {
-				goFurther = true;
-				rooms[nowRb + 1][nowPb + 1] = 3;
-				calcScore(nowRa, nowPa, nowRb + 1, nowPb + 1, aScore, bScore + 1, false, true);
-				rooms[nowRb + 1][nowPb + 1] = 0;
-			}
-			if (nowPb % 2 == 0 && rooms[nowRb - 1][nowPb - 1] == 0) {
-				goFurther = true;
-				rooms[nowRb - 1][nowPb - 1] = 3;
-				calcScore(nowRa, nowPa, nowRb - 1, nowPb - 1, aScore, bScore + 1, false, true);
-				rooms[nowRb - 1][nowPb - 1] = 0;
-			}
-			if(!goFurther) {
-				if(conti) calcScore(nowRa, nowPa, nowRb, nowPb, aScore, bScore, true, false);
-				else {
-					minMax = Math.max(minMax, aScore - bScore);
-					return;
+			if (rooms[nowRb][nowPb + 1] == 0) neighbors.add(new Point(nowRb, nowPb + 1));
+			if (rooms[nowRb][nowPb - 1] == 0) neighbors.add(new Point(nowRb, nowPb - 1));
+			if (nowPb % 2 == 1 && rooms[nowRb + 1][nowPb + 1] == 0) neighbors.add(new Point(nowRb + 1, nowPb + 1));
+			if (nowPb % 2 == 0 && rooms[nowRb - 1][nowPb - 1] == 0) neighbors.add(new Point(nowRb - 1, nowPb - 1));
+		}
+		if(neighbors.size() == 0) {
+			if(!conti) return 0;
+			return minMax(nowRa, nowPa, nowRb, nowPb, !turn, false);
+		} else {
+			if(turn) {
+				int val = -1000;
+				for(Point p : neighbors) {
+					rooms[p.row][p.col] = 1;
+					val = Math.max(1+minMax(p.row, p.col, nowRb, nowPb, false, true), val);
+					rooms[p.row][p.col] = 0;
 				}
+				return val;
+			} else {
+				int val = 1000;
+				for(Point p : neighbors) {
+					rooms[p.row][p.col] = 1;
+					val = Math.min(minMax(nowRa, nowPa, p.row, p.col, true, true)-1, val);
+					rooms[p.row][p.col] = 0;
+				}
+				return val;
 			}
 		}
-		if (!goFurther) {
-			minMax = Math.max(minMax, aScore - bScore);
+
+	}
+	static class Point {
+		int row, col;
+		Point(int row, int col) {
+			this.row = row;
+			this.col = col;
 		}
 	}
 }
