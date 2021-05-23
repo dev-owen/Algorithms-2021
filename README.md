@@ -37,3 +37,7 @@ Owen's Algorithm Problem Solving Note
 1. [Increasing Substring](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_B_1.java) / Array / AC / 2021.04.19
 2. [Longest Progression](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_B_2.java) / HashMap / WA / 2020.04.19
 3. [Consecutive Primes](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_B_3.java) / HashMap / AC / 2020.04.19
+
+#### Round C
+
+1. [Smaller Strings](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_C_1.java) / Array / TLE / 2021.05.23
