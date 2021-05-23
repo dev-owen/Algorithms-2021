@@ -41,3 +41,4 @@ Owen's Algorithm Problem Solving Note
 #### Round C
 
 1. [Smaller Strings](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_C_1.java) / Array / TLE / 2021.05.23
+2. [Alien Generator](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_C_2.java) / DP / WA / 2021.05.23
