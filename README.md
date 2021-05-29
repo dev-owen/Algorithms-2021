@@ -24,6 +24,10 @@ Owen's Algorithm Problem Solving Note
 2. [Metal Harvest](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_F_2.java) / ArrayList / AC / 2021.04.17
 3. [Painter's Duel](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_F_3.java) / minMax / AC / 2020.04.24
 
+#### Round G
+
+1. [Kick_Start](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_G_1.java) / Array / AC / 2021.05.29
+
 ### 2021
 
 #### Round A
