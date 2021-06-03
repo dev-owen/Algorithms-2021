@@ -30,6 +30,10 @@ Owen's Algorithm Problem Solving Note
 2. [Maximum Coins](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_G_2.java) / Array / AC / 2021.05.29
 3. [Combination Lock](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_G_3.java) / Recursion / RE / 2021.05.29
 
+### Round H
+
+1. [Retype](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_H_1.java) / Array / AC / 2021.06.04
+
 
 ### 2021
 
