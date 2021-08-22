@@ -30,7 +30,7 @@ Owen's Algorithm Problem Solving Note
 2. [Maximum Coins](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_G_2.java) / Array / AC / 2021.05.29
 3. [Combination Lock](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_G_3.java) / Recursion / RE / 2021.05.29
 
-### Round H
+#### Round H
 
 1. [Retype](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_H_1.java) / Array / AC / 2021.06.04
 2. [Boring Numbers](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_H_1.java) / DP / WA / 2021.07.23
@@ -53,3 +53,6 @@ Owen's Algorithm Problem Solving Note
 
 1. [Smaller Strings](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_C_1.java) / Array / TLE / 2021.05.23
 2. [Alien Generator](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_C_2.java) / DP / WA / 2021.05.23
+
+#### Round E
+1. [Shuffled Anagrams](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_E_1.java) / Data Structure / WA / 2021.08.22
