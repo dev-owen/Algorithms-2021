@@ -10,9 +10,7 @@ public class Kickstart_2020_H_2 {
 			st = new StringTokenizer(br.readLine());
 			long L = Long.parseLong(st.nextToken());
 			long R = Long.parseLong(st.nextToken());
-			System.out.println("Case #" + i + ": " + (boring(R, 1) - boring(L-1, 1)));
-			System.out.println(boring(R, 1));
-			System.out.println(boring(L-1, 1));
+			System.out.println("Case #" + i + ": " + (boringCnt(R) - boringCnt(L - 1)));
 		}
 	}
 
@@ -21,14 +19,30 @@ public class Kickstart_2020_H_2 {
 		else return 1 + digits(l / (long) 10);
 	}
 
-	static long boring(long l, int position) {
-		if(l < 10) return position%2 == 0 ? l/2 : (l+1)/2;
-		long ans = 0;
-		int lDigits = digits(l);
-		long lthNumber = l/(long)Math.pow(10, lDigits-1);
-		if(position%2 == 0) ans += ((lthNumber/2)+1)*Math.pow(5, lDigits-1);
-		else ans += ((lthNumber+1)/2)*Math.pow(5, lDigits-1);
-		if(lthNumber%2 == position%2) ans += boring(l%10, position+1);
-		return ans + boring(l%10, position);
+	static int findNum(long l, int i) { // 2345, 3 -> 4
+		int digit = digits(l);
+		return (int) (l / (long) Math.pow(10, digit - i)) % 10;
+	}
+
+	static long boringCnt(long l) {
+		long res = 0;
+		int digit = digits(l);
+		for (int i = 1; i < digit; i++) {
+			res += Math.pow(5, i);
+		}
+		for (int i = 1; i <= digit; i++) {
+			if(i == digit) {
+				if (i % 2 == 1) res += (findNum(l, digit) + 1) / 2;
+				else res += findNum(l, digit) / 2 + 1;
+
+				break;
+			}
+			if (i % 2 == 1) res += (findNum(l, i) / 2) * Math.pow(5, digit - i);
+			else res += ((findNum(l, i) + 1) / 2) * Math.pow(5, digit - i);
+
+			if(findNum(l, i) % 2 != i % 2) break;
+		}
+		System.out.println(l + " : " + res);
+		return res;
 	}
 }

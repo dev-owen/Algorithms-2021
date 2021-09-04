@@ -33,7 +33,7 @@ Owen's Algorithm Problem Solving Note
 #### Round H
 
 1. [Retype](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_H_1.java) / Array / AC / 2021.06.04
-2. [Boring Numbers](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_H_1.java) / DP / WA / 2021.07.23
+2. [Boring Numbers](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2020_H_1.java) / Math / AC / 2021.09.04
 
 ### 2021
 
