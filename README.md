@@ -63,3 +63,4 @@ Owen's Algorithm Problem Solving Note
 
 1. 1107 / [리모컨](https://www.acmicpc.net/problem/1107) / Brute Force / G5 / AC / 2021.10.03
 2. 14500 / [테트로미노](https://www.acmicpc.net/problem/14500) / Brute Force / G5 / AC / 2021.10.03
+3. 12100 / [2048(easy)](https://www.acmicpc.net/problem/12100) / Brute Force / G2 / WA / 2021.10.03
