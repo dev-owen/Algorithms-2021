@@ -56,3 +56,9 @@ Owen's Algorithm Problem Solving Note
 
 #### Round E
 1. [Shuffled Anagrams](https://github.com/dev-owen/Algorithms-2021/blob/main/src/Kickstart_2021_E_1.java) / Data Structure / WA / 2021.08.22
+
+## BOJ
+
+### Brute Force
+
+1. [1107 리모컨](https://www.acmicpc.net/problem/1107) / Brute Force / G5 / AC / 2021.10.03
